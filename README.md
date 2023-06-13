@@ -18,3 +18,4 @@
 5. Удаление Лайка
 6. закрытие попапов разным кнопкам. 
 
+ссылка на GitHub Pages: https://kseniyashakurova.github.io/mesto-react/
