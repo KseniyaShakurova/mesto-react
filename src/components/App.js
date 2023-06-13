@@ -68,9 +68,8 @@ function App() {
                 id="profile-name"
                 type="text"
                 placeholder="Ваше имя"
-                value="Жак-Ив Кусто"
-                minlength="2"
-                maxlength="40"
+                minLength="2"
+                maxLength="40"
                 required
               />
               <span className="popup__error profile-name-error"></span>
@@ -82,9 +81,8 @@ function App() {
                 id="job"
                 type="text"
                 placeholder="Интересное о Вас"
-                value="Исследователь океана"
-                minlength="2"
-                maxlength="200"
+                minLength="2"
+                maxLength="200"
                 required
               />
               <span className="popup__error job-error"></span>
@@ -98,7 +96,7 @@ function App() {
           title="Новое место"
           buttonText="Сохранить"
         >
-          <fieldset class="popup__input">
+          <fieldset className="popup__input">
             <label className="popup__form-input">
               <input
                 className="popup__info"
@@ -106,8 +104,8 @@ function App() {
                 name="card"
                 type="text"
                 placeholder="Название"
-                minlength="2"
-                maxlength="30"
+                minLength="2"
+                maxLength="30"
                 required
               />
               <span className="popup__error popup__name-card-error"></span>
