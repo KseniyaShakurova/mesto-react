@@ -25,14 +25,11 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
-  setUserInfo({ inputName, inputAbout }) {
+  setUserInfo(data) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
-      body: JSON.stringify({
-        name: inputName,
-        about: inputAbout,
-      }),
+      body: JSON.stringify(data),
     }).then(this._handleResponse);
   }
 
@@ -45,37 +42,35 @@ export default class Api {
   }
 
   likeCard(data) {
-    return fetch(`${this._baseUrl}/cards/${data._id}/likes`, {
+    return fetch(`${this._baseUrl}/cards/${data}/likes`, {
       method: "PUT",
       headers: this._headers,
     }).then(this._handleResponse);
   }
 
   disLike(data) {
-    return fetch(`${this._baseUrl}/cards/${data._id}/likes`, {
+    return fetch(`${this._baseUrl}/cards/${data}/likes`, {
       method: "DELETE",
       headers: this._headers,
     }).then(this._handleResponse);
   }
 
-  deleteCard(id) {
-    return fetch(`${this._baseUrl}/cards/${id}`, {
+  deleteCard(data) {
+    return fetch(`${this._baseUrl}/cards/${data}`, {
       method: "DELETE",
       headers: this._headers,
     }).then(this._handleResponse);
   }
 
-  updateAvatar(avatar) {
+  updateAvatar(data) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
-      body: JSON.stringify({
-        avatar: avatar,
-      }),
+      body: JSON.stringify(data),
     }).then(this._handleResponse);
   }
+  
 }
-
 const api = new Api({
   baseUrl: "https://mesto.nomoreparties.co/v1/cohort-66",
   headers: {
